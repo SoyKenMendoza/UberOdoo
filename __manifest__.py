@@ -5,10 +5,13 @@
     'license': 'AGPL-3',
     'author': 'Iciva Technology',
     'depends': [
-        'contacts', 'hr', 'website',
+        'contacts', 'hr', 'fleet', 'website',
     ],
     'data': [
         'security/ir.model.access.csv',
+        'views/uber_route_views.xml',
+        'views/uber_menu.xml',        
+
     ],
     'assets': {
         'web.assets_frontend': [

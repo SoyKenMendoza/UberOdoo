@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <menuitem
+        id="menu_uber_root"
+        name="Uber"
+        action="action_uber_route"
+        sequence="1"/>
+
+</odoo>
