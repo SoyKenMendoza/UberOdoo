@@ -10,7 +10,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/uber_route_views.xml',
-        'views/uber_menu.xml',        
+        'views/uber_menu.xml',
+        'views/fleet_vehicle_views.xml',        
 
     ],
     'assets': {

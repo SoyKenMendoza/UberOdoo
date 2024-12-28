@@ -1,9 +1,6 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 class FleetVehicle(models.Model):
-    _inherit = 'fleet.vehicle.model.category'
+    _inherit = 'fleet.vehicle'
 
-    name = fields.Selection(
-            [('car', 'Carro'),
-            ('motorcycle', 'Moto'),
-            ('truck', 'Camioneta')], string='Categoría', required=True)
+    uber_driver_id = fields.Many2one('hr.employee', string="Chofer", required=True)
