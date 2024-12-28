@@ -29,6 +29,7 @@
                         </group>
                         <group>
                             <field name="distance"/>
+                            <field name="vehicle_category_id"/>
                             <field name="cost"/>
                         </group>
                     </group>

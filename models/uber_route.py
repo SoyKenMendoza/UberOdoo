@@ -18,6 +18,8 @@ class UberRoute(models.Model):
         ('la_rinconada', 'La Rinconada')], string="Destino", required=True) 
     distance = fields.Float("Distancia", compute='_compute_distance')
     cost = fields.Float("Costo", compute='_compute_cost')
+    vehicle_category_id = fields.Many2one('fleet.vehicle.model.category', string="Tipo de Vehiculo", required=True)
+    driver_id = fields.Many2one('hr.employee', string="Conductor", required=True)
     image = fields.Binary(string="Imagen")
 
 
@@ -50,7 +52,15 @@ class UberRoute(models.Model):
             key = (record.origin, record.destination)
             record.distance = distances.get(key, 0)
 
-    @api.depends('distance')
+    @api.depends('distance', 'vehicle_category_id')
     def _compute_cost(self):
-        for record in self:
-            record.cost = record.distance * 0.60
+            cost_per_km = {
+                'motorcycle': 0.60,
+                'car': 0.80,
+                'truck': 0.95,
+            }
+
+            for record in self:
+                category_id = record.vehicle_category_id
+                cost_per_km_value = cost_per_km.get(category_id.name, 0)
+                record.cost = record.distance * cost_per_km_value
