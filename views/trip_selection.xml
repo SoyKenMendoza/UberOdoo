@@ -18,7 +18,7 @@
                     </header>
 
                     <div class="container">
-                        <form id="trip_selection_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-model_name="uber_route" data-success-mode="redirect" data-success-page="/" data-pre-fill="true">
+                        <form id="trip_selection_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-model_name="res.partner" data-success-mode="redirect" data-success-page="/" data-pre-fill="true">
 
                             <div class="form-group s_website_form_field">
                                 <label for="name">Nombre<span class="s_website_form_mark">*</span></label>
