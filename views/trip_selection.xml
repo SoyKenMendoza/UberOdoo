@@ -5,19 +5,14 @@
 
         <t t-call="website.layout">
             <div id="wrap" class="oe_structure oe_empty">
+                <div class="container text-center"> 
+                    <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
 
-                <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
+                        <header>
+                            <h1>Bienvenido</h1>
+                            <h4>Vamos Bien</h4>
+                        </header>
 
-                    <header>
-                        <h1>
-                            Bienvenido
-                        </h1>
-                        <h4>
-                            Vamos Bien
-                        </h4>
-                    </header>
-
-                    <div class="container">
                         <form id="trip_selection_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-model_name="res.partner" data-success-mode="redirect" data-success-page="/" data-pre-fill="true">
 
                             <div class="form-group s_website_form_field">
@@ -36,14 +31,12 @@
                             </div>
 
                             <div class="mb-0 py-2 col-12 s_website_form_submit" data-name="Submit Button">
-                                <div style="width: 200px;" class="s_website_form_label"/>
-                                <a href="#" role="button" class="btn btn-primary btn-lg s_website_form_send">Submit</a>
-                                <span id="s_website_form_result"></span>
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button> 
                             </div>
 
                         </form>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
         </t>
 
