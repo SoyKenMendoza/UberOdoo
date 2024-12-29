@@ -10,10 +10,8 @@
       <value>res.partner</value>
       <value eval="[
         'name',
-        'date',
         'email',
         'phone',
-        'country_id',
         ]"/>
     </function>
 </odoo>

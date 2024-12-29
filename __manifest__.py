@@ -1,5 +1,5 @@
 {
-    'name': 'Uber',
+    'name': 'uber',
     'category': 'CursoPRoyecto',
     'version': '16.0.0.0.0',
     'license': 'AGPL-3',
@@ -14,7 +14,6 @@
         'views/trip_selection.xml', 
         'views/uber_menu.xml',
         'data/res_partner_data.xml',       
-
     ],
     'assets': {
         'web.assets_frontend': [

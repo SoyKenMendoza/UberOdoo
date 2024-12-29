@@ -4,7 +4,7 @@
     <template id="trip_selection" name="Custom template">
 
         <t t-call="website.layout">
-            <div id="wrap" class="oe_structure oe_empty trip-selection-uber">
+            <div id="wrap" class="oe_structure oe_empty">
 
                 <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
 

@@ -1,11 +1,11 @@
-odoo.define('uber.trip_selection', function (require) {
+odoo.define('UberOdoo.trip_selection', function (require) {
     'use strict';
 
     var publicWidget = require('web.public.widget');
 
     publicWidget.registry.trip_selection = publicWidget.Widget.extend({
         selector: '.trip-selection-uber',
-        xmlDepControllerendencies: ['/UberOdoo/views/trip_selection.xml'],
+        xmlDependencies: ['/Uber/views/trip_selection.xml'],
         events: {
             'input input[id=name]': '_validateAlphabetic',
         },
