@@ -12,7 +12,8 @@
         'views/uber_route_views.xml',
         'views/fleet_vehicle_views.xml',
         'views/trip_selection.xml', 
-        'views/uber_menu.xml',       
+        'views/uber_menu.xml',
+        'data/res_partner_data.xml',       
 
     ],
     'assets': {
