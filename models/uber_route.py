@@ -9,7 +9,7 @@ class UberRoute(models.Model):
         ('catia', 'Catia'),
         ('la_trinidad', 'La Trinidad'),
         ('petare', 'Petare'),
-        ('la_rinconada', 'La Rinconada')], string="Origen", required=True) 
+        ('la_rinconada', 'La Rinconada')], string="Origen", required=True)
     destination = fields.Selection([
         ('plaza_venezuela', 'Plaza Venezuela'),
         ('catia', 'Catia'),
@@ -19,7 +19,8 @@ class UberRoute(models.Model):
     distance = fields.Float("Distancia", compute='_compute_distance')
     cost = fields.Float("Costo", compute='_compute_cost')
     vehicle_category_id = fields.Many2one('fleet.vehicle.model.category', string="Tipo de Vehiculo", required=True)
-    driver_id = fields.Many2one('hr.employee', string="Conductor", required=True)
+    vehicle_available = fields.Many2one('fleet.vehicle',string="Vehiculo Disponible",
+        domain="[('location', '=', origin),('category_id', '=', vehicle_category_id)]", required=True)
     image = fields.Binary(string="Imagen")
 
 
