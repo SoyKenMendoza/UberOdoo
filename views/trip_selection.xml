@@ -13,21 +13,45 @@
                             <h4>Vamos Bien</h4>
                         </header>
 
-                        <form id="trip_selection_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-model_name="res.partner" data-success-mode="redirect" data-success-page="/" data-pre-fill="true">
+                        <form id="trip_selection_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-model_name="uber.route" data-success-mode="redirect" data-success-page="/" data-pre-fill="true">
 
                             <div class="form-group s_website_form_field">
-                                <label for="name">Nombre<span class="s_website_form_mark">*</span></label>
-                                <input type="text" class="form-control s_website_form_input" name="name" id="name" required="true"/>
+                                <label for="origin">Origen<span class="s_website_form_mark">*</span></label>
+                                <select type="text" class="form-control s_website_form_input" name="origin" id="origin" required="true">
+                                    <option value="plaza_venezuela">Plaza Venezuela</option>
+                                    <option value="catia">Catia</option>
+                                    <option value="la_trinidad">La Trinidad</option>
+                                    <option value="petare">Petare</option>
+                                    <option value="la_rinconada">La Rinconada</option>
+                                </select>
                             </div>
 
                             <div class="form-group s_website_form_field">
-                                <label for="phone">Teléfono<span class="s_website_form_mark">*</span></label>
-                                <input type="text" class="form-control s_website_form_input" name="phone" id="phone" required="true"/>
+                                <label for="destination">Destino<span class="s_website_form_mark">*</span></label>
+                                <select type="text" class="form-control s_website_form_input" name="destination" id="destination" required="true">
+                                    <option value="plaza_venezuela">Plaza Venezuela</option>
+                                    <option value="catia">Catia</option>
+                                    <option value="la_trinidad">La Trinidad</option>
+                                    <option value="petare">Petare</option>
+                                    <option value="la_rinconada">La Rinconada</option>
+                                </select>
                             </div>
 
                             <div class="form-group s_website_form_field">
-                                <label for="email">Correo<span class="s_website_form_mark">*</span></label>
-                                <input type="text" class="form-control s_website_form_input" name="email" id="email" required="true"/>
+                                <label for="vehicle_category_id">Tipo de Vehiculo<span class="s_website_form_mark">*</span></label>
+                                <select type="text" class="form-control s_website_form_input" name="vehicle_category_id" id="vehicle_category_id" required="true">
+                                    <option value="car">Carro</option>
+                                    <option value="motorcycle">Moto</option>
+                                    <option value="truck">Camioneta</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group s_website_form_field">
+                                <label for="distance">Distancia</label>
+                           </div>
+
+                            <div class="form-group s_website_form_field">
+                                <label for="cost">Costo</label> 
                             </div>
 
                             <div class="mb-0 py-2 col-12 s_website_form_submit" data-name="Submit Button">

@@ -16,16 +16,16 @@ class UberRoute(models.Model):
         ('la_trinidad', 'La Trinidad'),
         ('petare', 'Petare'),
         ('la_rinconada', 'La Rinconada')], string="Destino", required=True) 
-    distance = fields.Float("Distancia", compute='_compute_distance')
-    cost = fields.Float("Costo", compute='_compute_cost')
+    distance = fields.Float("Distancia", compute='_onchange_compute_distance')
+    cost = fields.Float("Costo", compute='_onchange_compute_cost')
     vehicle_category_id = fields.Many2one('fleet.vehicle.model.category', string="Tipo de Vehiculo", required=True)
     vehicle_available = fields.Many2one('fleet.vehicle',string="Vehiculo Disponible",
         domain="[('location', '=', origin),('category_id', '=', vehicle_category_id)]", required=True)
     image = fields.Binary(string="Imagen")
 
 
-    @api.depends('origin', 'destination')
-    def _compute_distance(self):
+    @api.onchange('origin', 'destination')
+    def _onchange_compute_distance(self):
         distances = {
             ('plaza_venezuela', 'catia'): 9.5,
             ('plaza_venezuela', 'la_trinidad'): 12.4,
@@ -53,8 +53,8 @@ class UberRoute(models.Model):
             key = (record.origin, record.destination)
             record.distance = distances.get(key, 0)
 
-    @api.depends('distance', 'vehicle_category_id')
-    def _compute_cost(self):
+    @api.onchange('distance', 'vehicle_category_id')
+    def _onchange_compute_cost(self):
             cost_per_km = {
                 'motorcycle': 0.60,
                 'car': 0.80,
