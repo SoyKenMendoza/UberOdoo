@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 
 <odoo>
-    <record id="fleet_vehicle_view_form" model="ir.ui.view">
+
+    <record id="fleet_vehicle_view_form_inherit" model="ir.ui.view">
         <field name="name">fleet.vehicle.view.form.inherit.uber</field>
         <field name="model">fleet.vehicle</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
@@ -9,6 +10,25 @@
             <xpath expr="//field[@name='driver_id']" position="after">
                 <field name='uber_driver_id'/>
             </xpath>
+            <xpath expr="//field[@name='driver_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='mobility_card']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='future_driver_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='next_assignation_date']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='vin_sn']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='manager_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+            </xpath>
         </field>
     </record>
+
 </odoo>

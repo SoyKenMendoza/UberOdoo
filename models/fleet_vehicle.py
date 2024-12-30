@@ -11,3 +11,5 @@ class FleetVehicle(models.Model):
         ('la_trinidad', 'La Trinidad'),
         ('petare', 'Petare'),
         ('la_rinconada', 'La Rinconada')], string="Ubicación", required=True) 
+    
+    image = fields.Binary(string="Imagen")

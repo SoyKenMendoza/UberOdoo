@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 class UberRoute(models.Model):
     _name = 'uber.route'
@@ -23,7 +24,12 @@ class UberRoute(models.Model):
         domain="[('location', '=', origin),('category_id', '=', vehicle_category_id)]", required=True)
     image = fields.Binary(string="Imagen")
 
-
+    @api.constrains('origin', 'destination')
+    def _check_origin_destination(self):
+        for record in self:
+            if record.origin == record.destination:
+                raise ValidationError(_('El origen y el destino no pueden ser iguales.'))
+            
     @api.onchange('origin', 'destination')
     def _onchange_compute_distance(self):
         distances = {
