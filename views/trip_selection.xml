@@ -47,6 +47,11 @@
                             </div>
 
                             <div class="form-group s_website_form_field">
+                                <label for="vehicle_available">Vehiculo Disponible<span class="s_website_form_mark">*</span></label>
+                                <select type="text" class="form-control s_website_form_input" name="vehicle_available" id="vehicle_available" required="true"/>
+                            </div>
+
+                            <div class="form-group s_website_form_field">
                                 <label for="distance">Distancia</label>
                            </div>
 
